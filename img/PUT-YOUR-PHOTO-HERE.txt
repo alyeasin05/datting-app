@@ -1,0 +1,2 @@
+Put your photo in this folder and name it: photo.jpg
+(photo.jpeg, photo.png or photo.webp also work)

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Only Date Option ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0a0510;--purple:#4a1a6b;--pink:#ff8fb8;--rose:#ff4f8b;--white:#fdf6fa;--glass:rgba(255,255,255,.07);--line:rgba(255,160,200,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(1000px 600px at 15% -10%,#3b1260 0,transparent 60%),radial-gradient(800px 600px at 100% 40%,#5a1646 0,transparent 55%),var(--bg);background-attachment:fixed;color:var(--white);font-family:Poppins,system-ui,sans-serif;overflow-x:hidden;min-height:100vh}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+section,footer{position:relative;z-index:1}
+.glass{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:26px;box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12)}
+.btn{font:600 1rem Poppins,sans-serif;border:0;cursor:pointer;color:#fff;padding:16px 30px;border-radius:50px;background:linear-gradient(135deg,var(--rose),#b4237a 60%,#6d28b8);box-shadow:0 10px 30px rgba(255,79,139,.4);transition:.3s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 40px rgba(255,79,139,.6)}
+.btn.ghost{background:var(--glass);border:1px solid var(--line);box-shadow:none;backdrop-filter:blur(10px)}
+.gt{background:linear-gradient(90deg,#fff,var(--pink),#d9a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* welcome */
+#welcome{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 20px;transition:opacity .8s,transform .8s}
+#welcome.out{opacity:0;transform:scale(1.08);pointer-events:none}
+.pill{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--pink);padding:8px 18px;border:1px solid var(--line);border-radius:40px;margin-bottom:26px;background:var(--glass)}
+#welcome h1{font-size:clamp(2.2rem,7vw,4.6rem);line-height:1.12;max-width:900px;margin-bottom:20px;animation:rise 1.2s both}
+#welcome p{font-weight:300;font-size:clamp(1rem,2.4vw,1.3rem);color:#e8cfe0;margin-bottom:38px;max-width:560px;animation:rise 1.2s .3s both}
+#welcome .btn{animation:rise 1.2s .6s both,pulse 2s 2s infinite}
+.bigheart{font-size:3.2rem;margin-bottom:10px;animation:beat 1.3s infinite}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(255,79,139,0)}0%{box-shadow:0 0 0 0 rgba(255,79,139,.5)}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+#app{display:none}
+.wrap{max-width:1080px;margin:0 auto;padding:90px 20px 30px}
+.title{text-align:center;margin-bottom:46px}
+.title small{color:var(--pink);letter-spacing:.3em;text-transform:uppercase;font-size:.72rem}
+.title h2{font-size:clamp(1.9rem,5vw,3rem);margin-top:8px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+/* profile */
+.prof{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:40px;align-items:center;padding:34px}
+.photo{aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(160deg,#5b1f86,#b4237a);border:2px solid rgba(255,160,200,.5);box-shadow:0 0 50px rgba(255,79,139,.35)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:.85rem;color:#ffe3ef;text-align:center;padding:20px}
+.ph b{font:800 5rem 'Playfair Display',serif}
+.badge{position:absolute;right:12px;bottom:12px;background:rgba(10,5,16,.75);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:30px;padding:7px 14px;font-size:.78rem;display:flex;gap:7px;align-items:center}
+.tick{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#59b7ff,#7c5cff);display:grid;place-items:center;font-size:.8rem;animation:pop 2.4s infinite}
+@keyframes pop{0%,100%{box-shadow:0 0 0 0 rgba(120,140,255,.7)}50%{box-shadow:0 0 0 9px rgba(120,140,255,0);transform:scale(1.12)}}
+.info h2{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.06em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cid{display:inline-block;margin:10px 0 18px;font-size:.82rem;letter-spacing:.2em;color:var(--pink);border:1px dashed var(--line);padding:6px 14px;border-radius:10px}
+.status{display:flex;align-items:center;gap:10px;background:rgba(80,255,170,.08);border:1px solid rgba(100,255,180,.3);color:#a9ffd6;padding:10px 16px;border-radius:14px;font-size:.85rem;font-weight:500;margin-bottom:20px}
+.dot{width:10px;height:10px;border-radius:50%;background:#4dffa8;animation:blink 1.4s infinite;flex:none}
+@keyframes blink{50%{opacity:.25}}
+.tag{font:italic 500 1.35rem 'Playfair Display',serif;color:#ffd3e6;line-height:1.5}
+.stats{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.stat{flex:1;min-width:90px;text-align:center;padding:14px 8px;border-radius:16px;background:var(--glass);border:1px solid var(--line)}
+.stat b{display:block;font-size:1.3rem;color:var(--pink)}.stat span{font-size:.7rem;color:#d9bfd0}
+/* about */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{padding:28px 24px;transition:.4s;cursor:default}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:rgba(255,160,200,.6);box-shadow:0 24px 60px rgba(255,79,139,.25)}
+.card .ic{font-size:2.2rem;margin-bottom:12px;display:inline-block;transition:.4s}.card:hover .ic{transform:scale(1.3) rotate(10deg)}
+.card h3{font-size:1.3rem;margin-bottom:8px;color:var(--pink)}.card p{font-weight:300;line-height:1.6;color:#f0dbe8}
+/* reasons */
+.list{display:grid;gap:14px;max-width:760px;margin:auto}
+.r{display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:20px;transition:.35s;cursor:pointer}
+.r:hover{transform:translateX(10px);background:rgba(255,79,139,.14)}
+.r .n{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:600;background:linear-gradient(135deg,var(--rose),#7a2bc2)}
+.r span{font-weight:500}
+/* invite */
+#invite{text-align:center}
+.inv{padding:56px 24px;max-width:760px;margin:auto}
+.inv h2{font-size:clamp(1.8rem,5vw,2.8rem);margin:14px 0 30px}
+.heart{width:130px;height:130px;margin:auto;filter:drop-shadow(0 0 28px rgba(255,79,139,.8));animation:beat 1.3s infinite}
+.btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+#msg{min-height:60px;margin-top:26px;font:italic 500 1.2rem 'Playfair Display',serif;color:#ffd3e6;transition:.4s}
+/* celebration */
+#cel{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 40%,#7a1f68 0,#2a0b44 55%,#0a0510 100%)}
+#cel.show{display:flex;animation:fade .8s}
+@keyframes fade{from{opacity:0}}
+#cel canvas{position:absolute;inset:0;width:100%;height:100%}
+.cbox{position:relative;max-width:640px;padding:44px 28px;animation:zoom .9s cubic-bezier(.2,1.4,.4,1)}
+@keyframes zoom{from{transform:scale(.3);opacity:0}}
+.cbox h2{font-size:clamp(1.8rem,6vw,3.2rem);line-height:1.25;margin:16px 0}
+.cbox p{color:#ffe3ef;font-weight:300;margin-bottom:26px}
+footer{text-align:center;padding:50px 20px 70px;color:#d9bfd0;font-size:.95rem}
+footer .hr{width:80px;height:2px;margin:0 auto 22px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+@media(max-width:760px){.prof{grid-template-columns:1fr;padding:22px;gap:26px;text-align:center}.photo{max-width:320px;margin:auto;width:100%}.info h2,.status{justify-content:center}.wrap{padding-top:60px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body>
+<canvas id="bg"></canvas>
+
+<section id="welcome">
+  <div class="bigheart">❤️</div>
+  <div class="pill">Exclusive • Private • One Candidate</div>
+  <h1 class="gt" id="wTitle"></h1>
+  <p>Searching for your perfect date? Your search ends here!</p>
+  <button class="btn" id="start">Let’s Find Your Date 💗</button>
+</section>
+
+<main id="app">
+  <section id="profile"><div class="wrap">
+    <div class="title rv"><small>Candidate Profile</small><h2 class="gt">Meet Your Match</h2></div>
+    <div class="glass prof rv">
+      <div class="photo" id="photo" title="Tap to change photo"><div class="ph"><b id="mono"></b><span>📸 Tap to add your photo<br>(or put photo.jpg in the img folder)</span></div>
+        <div class="badge"><div class="tick">✓</div>Verified Original</div></div>
+      <div class="info">
+        <h2><span id="name" class="gt"></span></h2>
+        <div class="cid" id="cid"></div>
+        <div class="status"><span class="dot"></span><span id="status"></span></div>
+        <p class="tag" id="tagline"></p>
+        <div class="stats" id="stats"></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="about"><div class="wrap">
+    <div class="title rv"><small>Get to know</small><h2 class="gt">About Me</h2></div>
+    <div class="grid" id="aboutGrid"></div>
+  </div></section>
+
+  <section id="why"><div class="wrap">
+    <div class="title rv"><small>The facts</small><h2 class="gt">Why Choose Yeasin?</h2></div>
+    <div class="list" id="reasons"></div>
+  </div></section>
+
+  <section id="invite"><div class="wrap">
+    <div class="glass inv rv">
+      <svg class="heart" viewBox="0 0 32 29"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9ac1"/><stop offset="1" stop-color="#d1246f"/></linearGradient></defs><path fill="url(#g)" d="M23.6 0c-3 0-5.8 1.6-7.6 4.1C14.2 1.6 11.4 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.6 16 20.6 16 20.6s16-11 16-20.6C32 3.8 28.2 0 23.6 0z"/></svg>
+      <h2 class="gt">So, Are You Ready for a Date With Yeasin?</h2>
+      <div class="btns">
+        <button class="btn" id="yes">YES! I WANT MY DATE ❤️</button>
+        <button class="btn ghost" id="think">I NEED TO THINK 🤔</button>
+      </div>
+      <div id="msg"></div>
+    </div>
+  </div></section>
+
+  <footer><div class="hr"></div>Made with ❤️ by <span id="fName"></span>, exclusively for someone special.</footer>
+</main>
+
+<div id="cel"><canvas id="cc"></canvas>
+  <div class="cbox"><div class="bigheart" style="font-size:4rem">💖</div>
+    <h2 class="gt" id="cTitle"></h2><p>Your date is officially booked. No competition. No refunds. 😌</p>
+    <button class="btn ghost" id="close">Close &amp; Relive the Magic ✨</button></div></div>
+
+<script>
+/* ====== EDIT YOUR DETAILS HERE ====== */
+const CONFIG={
+  name:"YEASIN", id:"YS-001",
+  status:"AVAILABLE FOR ONE SPECIAL PERSON",
+  tagline:"Not perfect, but definitely your favorite.",
+  photo:"", /* optional: set a path like \"img/me.jpg\"; otherwise put your picture in the img folder named photo.jpg */
+  stats:[["100%","Original"],["1","Candidate"],["∞","Care"]],
+  about:[["💞","Personality","Caring, Funny, Romantic."],["✨","Special Skills","Making you smile, annoying you lovingly."],["🌹","Hobbies","Spending quality time together."],["🎯","Relationship Goal","Creating beautiful memories."],["🧠","Small Flaw","Forgets things sometimes… but never forgets you. 😅"],["💪","Effort Level","100% effort, every single day."],["🥰","Biggest Weakness","Completely crazy about his girl."]],
+  reasons:["100% Original Boyfriend Material.","Unlimited Care & Attention.","Lifetime Supply of Bad Jokes.","No Competition – Only One Candidate!","Premium Hug Subscription Included."],
+  thinkMessage:"Take your time, but remember... this offer has only one candidate! 😂"
+};
+/* ==================================== */
+const $=s=>document.querySelector(s);
+$('#wTitle').textContent="Welcome to "+CONFIG.name.charAt(0)+CONFIG.name.slice(1).toLowerCase()+"’s Dating Application ❤️";
+$('#name').textContent=CONFIG.name;$('#cid').textContent="CANDIDATE ID: "+CONFIG.id;
+$('#status').textContent="STATUS: "+CONFIG.status;$('#tagline').textContent="“"+CONFIG.tagline+"”";
+$('#mono').textContent=CONFIG.name[0];$('#fName').textContent=CONFIG.name.charAt(0)+CONFIG.name.slice(1).toLowerCase();
+$('#stats').innerHTML=CONFIG.stats.map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+$('#aboutGrid').innerHTML=CONFIG.about.map((a,i)=>`<div class="glass card rv" style="transition-delay:${i*.12}s"><div class="ic">${a[0]}</div><h3>${a[1]}</h3><p>${a[2]}</p></div>`).join('');
+$('#reasons').innerHTML=CONFIG.reasons.map((r,i)=>`<div class="glass r rv" style="transition-delay:${i*.1}s"><div class="n">${i+1}</div><span>${r}</span></div>`).join('');
+$('#cTitle').textContent="CONGRATULATIONS! 🎉 You’ve Successfully Won a Date With "+CONFIG.name+"! ❤️";
+
+/* photo */
+function setPhoto(src){const p=$('#photo');p.querySelector('.ph')?.remove();let i=p.querySelector('img');if(!i){i=new Image();p.prepend(i)}i.src=src}
+(function probe(l){if(!l.length)return;const t=new Image();t.onload=()=>setPhoto(t.src);t.onerror=()=>probe(l.slice(1));t.src=l[0]})(CONFIG.photo?[CONFIG.photo]:['img/photo.jpg','img/photo.jpeg','img/photo.png','img/photo.webp']);
+const fi=document.createElement('input');fi.type='file';fi.accept='image/*';
+$('#photo').onclick=()=>{if(!$('#photo img'))fi.click()};
+fi.onchange=()=>{const f=fi.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),k=Math.min(1,900/im.width);c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);const u=c.toDataURL('image/jpeg',.85);setPhoto(u);try{localStorage.setItem('ys-photo',u)}catch(e){}};im.src=URL.createObjectURL(f)};
+
+/* start */
+$('#start').onclick=()=>{$('#welcome').classList.add('out');setTimeout(()=>{$('#welcome').style.display='none';$('#app').style.display='block';window.scrollTo(0,0);obs();burst(innerWidth/2,innerHeight/3,18)},700)};
+function obs(){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>o.observe(e))}
+
+/* tilt on profile */
+const pc=document.querySelector('.prof');
+pc.addEventListener('mousemove',e=>{const r=pc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;pc.style.transform=`perspective(1000px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`});
+pc.addEventListener('mouseleave',()=>pc.style.transform='');
+
+/* think / yes */
+const thinks=[CONFIG.thinkMessage,"Still thinking? Fine, I’ll wait… I have no other candidates anyway 😌","Plot twist: the answer is still Yeasin 😂","Loading other options… 0 results found 🔍"];let ti=0;
+$('#think').onclick=()=>{const m=$('#msg');m.style.opacity=0;setTimeout(()=>{m.textContent=thinks[ti++%thinks.length];m.style.opacity=1},200);const y=$('#yes');y.style.transform='scale(1.15)';setTimeout(()=>y.style.transform='',400)};
+$('#yes').onclick=()=>{$('#cel').classList.add('show');conf=true;cstart()};
+$('#close').onclick=()=>{$('#cel').classList.remove('show');conf=false};
+
+/* background floating hearts + particles */
+const bg=$('#bg'),bx=bg.getContext('2d');let W,H,ps=[];
+function rs(){W=bg.width=innerWidth;H=bg.height=innerHeight}rs();addEventListener('resize',rs);
+const mk=(init)=>({x:Math.random()*W,y:init?Math.random()*H:H+30,s:8+Math.random()*20,v:.3+Math.random()*.8,d:Math.random()*6,h:Math.random()<.55,a:.15+Math.random()*.4});
+for(let i=0;i<36;i++)ps.push(mk(true));
+function heartPath(c,x,y,s){c.beginPath();c.moveTo(x,y+s*.3);c.bezierCurveTo(x,y,x-s*.5,y,x-s*.5,y+s*.3);c.bezierCurveTo(x-s*.5,y+s*.6,x,y+s*.8,x,y+s);c.bezierCurveTo(x,y+s*.8,x+s*.5,y+s*.6,x+s*.5,y+s*.3);c.bezierCurveTo(x+s*.5,y,x,y,x,y+s*.3);c.fill()}
+let bursts=[];
+function burst(x,y,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,v=2+Math.random()*4;bursts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,s:10+Math.random()*12,l:1})}}
+addEventListener('pointerdown',e=>{if(!e.target.closest('button'))burst(e.clientX,e.clientY,8)});
+(function loop(t=0){bx.clearRect(0,0,W,H);
+ ps.forEach((p,i)=>{p.y-=p.v;p.x+=Math.sin(t/1200+p.d)*.5;if(p.y<-40)ps[i]=mk(false);bx.globalAlpha=p.a;bx.fillStyle=p.h?'#ff6fa5':'#e6b8ff';if(p.h)heartPath(bx,p.x,p.y,p.s);else{bx.beginPath();bx.arc(p.x,p.y,p.s/6,0,6.28);bx.fill()}});
+ bursts=bursts.filter(b=>b.l>0);bursts.forEach(b=>{b.x+=b.vx;b.y+=b.vy;b.vy+=.12;b.l-=.015;bx.globalAlpha=Math.max(b.l,0);bx.fillStyle='#ff8fb8';heartPath(bx,b.x,b.y,b.s)});
+ bx.globalAlpha=1;requestAnimationFrame(loop)})();
+
+/* confetti */
+const cc=$('#cc'),cx=cc.getContext('2d');let conf=false,cp=[];
+const cols=['#ff4f8b','#ff8fb8','#d9a6ff','#fff','#ffd36b','#8a4dff'];
+function cstart(){cc.width=innerWidth;cc.height=innerHeight;cp=[];for(let i=0;i<220;i++)cp.push({x:Math.random()*cc.width,y:-Math.random()*cc.height,w:6+Math.random()*8,v:2+Math.random()*4,r:Math.random()*6,vr:(Math.random()-.5)*.2,c:cols[i%6],h:Math.random()<.4,dx:(Math.random()-.5)*2});ctick()}
+function ctick(){if(!conf)return;cx.clearRect(0,0,cc.width,cc.height);cp.forEach(p=>{p.y+=p.v;p.x+=p.dx+Math.sin(p.y/40);p.r+=p.vr;if(p.y>cc.height+20){p.y=-20;p.x=Math.random()*cc.width}cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;if(p.h)heartPath(cx,0,-p.w,p.w*2);else cx.fillRect(-p.w/2,-p.w/4,p.w,p.w/2);cx.restore()});requestAnimationFrame(ctick)}
+</script></body></html>
